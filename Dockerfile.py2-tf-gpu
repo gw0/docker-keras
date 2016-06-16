@@ -1,6 +1,6 @@
 # docker-keras - Keras in Docker for reproducible deep learning
 
-FROM debian:stretch
+FROM gw000/debian-cuda:7.5
 MAINTAINER gw0 [http://gw.tnode.com/] <gw.2016@tnode.com>
 
 # install debian packages
@@ -31,13 +31,13 @@ RUN apt-get update -qq \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-ARG THEANO_VERSION=0.8.2
-ENV THEANO_FLAGS='device=cpu,floatX=float32'
-RUN pip --no-cache-dir install git+https://github.com/Theano/Theano.git@rel-${THEANO_VERSION}
+ARG TENSORFLOW_VERSION=0.8.0
+ARG TENSORFLOW_DEVICE=gpu
+RUN pip --no-cache-dir install http://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_DEVICE}/tensorflow-${TENSORFLOW_VERSION}-cp27-none-linux_x86_64.whl
 
 ARG KERAS_VERSION=1.0.4
-ENV KERAS_BACKEND=theano
-RUN pip --no-cache-dir install git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
+ENV KERAS_BACKEND=tensorflow
+RUN pip --no-cache-dir install --no-dependencies git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
 
 # dump package lists
 RUN dpkg-query -l > /dpkg-query-l.txt \
