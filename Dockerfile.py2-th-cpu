@@ -1,0 +1,46 @@
+# docker-keras - Keras in Docker for reproducible deep learning
+
+FROM debian:stretch
+MAINTAINER gw0 [http://gw.tnode.com/] <gw.2016@tnode.com>
+
+# install debian packages
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update -qq \
+ && apt-get install --no-install-recommends -y \
+    # install essentials
+    build-essential \
+    g++ \
+    git \
+    # install python 2
+    python \
+    python-dev \
+    python-pip \
+    python-setuptools \
+    python-virtualenv \
+    pkg-config \
+    # requirements for numpy
+    libopenblas-base \
+    python-numpy \
+    python-scipy \
+    # requirements for keras
+    python-h5py \
+    python-yaml \
+    python-pydot \
+    # requirements for matplotlib
+    python-matplotlib \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+ARG THEANO_VERSION=0.8.1
+ENV THEANO_FLAGS='device=cpu,floatX=float32'
+RUN pip --no-cache-dir install git+https://github.com/Theano/Theano.git@rel-${THEANO_VERSION}
+
+ARG KERAS_VERSION=0.3.3
+ENV KERAS_BACKEND=theano
+RUN pip --no-cache-dir install git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
+
+# dump package lists
+RUN dpkg-query -l > /dpkg-query-l.txt \
+ && pip2 freeze > /pip2-freeze.txt
+
+WORKDIR /srv/
