@@ -17,6 +17,7 @@ RUN apt-get update -qq \
     python-pip \
     python-setuptools \
     python-virtualenv \
+    python-wheel \
     pkg-config \
     # requirements for numpy
     libopenblas-base \
