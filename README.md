@@ -7,7 +7,7 @@ Open source project:
 
 - <i class="fa fa-fw fa-home"></i> home: <http://gw.tnode.com/docker/keras/>
 - <i class="fa fa-fw fa-github-square"></i> github: <http://github.com/gw0/docker-keras/>
-- <i class="fa fa-fw fa-laptop"></i> technology: *debian*, *keras*, *tensorflow*, *theano*, *openblas*, *cuda toolkit*, *python*, *numpy*, *h5py*, *matplotlib*
+- <i class="fa fa-fw fa-laptop"></i> technology: *debian*, *keras*, *tensorflow*, *theano*, *openblas*, *cuda toolkit*, *python*, *numpy*, *h5py*
 - <i class="fa fa-fw fa-database"></i> docker hub: <https://hub.docker.com/r/gw000/keras/>
 
 Available tags:
@@ -55,20 +55,33 @@ $ docker run -it --rm -v /srv/ai:/srv/ai gw000/keras /srv/ai/run.py
 Or using TensorFlow backend on GPUs (see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/)) in Python 2:
 
 ```bash
-$ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') -v /srv/ai:/srv/ai gw000/keras:1.0.4-py2-tf-gpu /srv/ai/run.py
+$ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') -v /srv/ai:/srv/ai gw000/keras:1.2.0-py2-tf-gpu /srv/ai/run.py
 ```
 
 Or using Theano backend on GPUs (see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/)) in Python 3:
 
 ```bash
-$ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') -v /srv/ai:/srv/ai gw000/keras:1.0.4-py3-th-gpu /srv/ai/run.py
+$ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') -v /srv/ai:/srv/ai gw000/keras:1.2.0-py3-th-gpu /srv/ai/run.py
 ```
 
-Or specify a fixed version in your `Dockerfile` for reproducible deep learning:
+In practice you are supposed to extend this image by writing your own `Dockerfile` that installs all your application dependencies (either using `apt-get` or `pip`). Eg. if you need Matplotlib, PIL/pillow, Pandas, Scikit-learn, and Statsmodels:
 
 ```
-FROM gw000/keras:1.0.8-py2-th-cpu
+FROM gw000/keras:1.2.0-py2-th-cpu
 
+# install dependencies from debian packages
+RUN apt-get update -qq \
+ && apt-get install --no-install-recommends -y \
+    python-matplotlib \
+    python-pillow
+
+# install dependencies from python packages
+RUN pip --no-cache-dir install \
+    pandas \
+    scikit-learn \
+    statsmodels
+
+# install your app
 ADD ai/ /srv/ai/
 RUN chmod +x /srv/ai/run.py
 
