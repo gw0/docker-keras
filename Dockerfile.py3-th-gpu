@@ -1,7 +1,7 @@
 # docker-keras - Keras in Docker for reproducible deep learning
 
 FROM gw000/debian-cuda:8.0_5.1
-MAINTAINER gw0 [http://gw.tnode.com/] <gw.2016@tnode.com>
+MAINTAINER gw0 [http://gw.tnode.com/] <gw.2017@ena.one>
 
 # install debian packages
 ENV DEBIAN_FRONTEND noninteractive
