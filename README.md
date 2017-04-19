@@ -12,13 +12,15 @@ Open source project:
 
 Available tags:
 
-- `2.0.2-py2`, `2.0.2-cpu`, `2.0.2`, `latest` points to `2.0.2-py2-tf-cpu`
-- `2.0.2-py3` points to `2.0.2-py3-tf-cpu`
-- `2.0.2-gpu` points to `2.0.2-py2-tf-gpu`
-- `2.0.2-py2-tf-cpu`/`2.0.2-py2-tf-gpu` [2017-03-27]: *Python 2.7* + *Keras* <small>(2.0.2)</small> + *TensorFlow* <small>(1.0.1)</small> on CPU/GPU ([*Dockerfile.py2-tf-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-tf-cpu)/[*.py2-tf-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-tf-gpu))
-- `2.0.2-py2-th-cpu`/`2.0.2-py2-th-gpu` [2017-03-27]: *Python 2.7* + *Keras* <small>(2.0.2)</small> + *Theano* <small>(0.9.0)</small> on CPU/GPU ([*Dockerfile.py2-th-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-th-cpu)/[*.py2-th-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-th-gpu))
-- `2.0.2-py3-tf-cpu`/`2.0.2-py3-tf-gpu` [2017-03-27]: *Python 3.5* + *Keras* <small>(2.0.2)</small> + *TensorFlow* <small>(1.0.1)</small> on CPU/GPU ([*Dockerfile.py3-tf-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-tf-cpu)/[*.py3-tf-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-tf-gpu))
-- `2.0.2-py3-th-cpu`/`2.0.2-py3-th-gpu` [2017-03-27]: *Python 3.5* + *Keras* <small>(2.0.2)</small> + *Theano* <small>(0.9.0)</small> on CPU/GPU ([*Dockerfile.py3-th-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-th-cpu)/[*.py3-th-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-th-gpu))
+- `2.0.3-py2`, `2.0.3-cpu`, `2.0.3`, `latest` points to `2.0.3-py2-tf-cpu`
+- `2.0.3-py3` points to `2.0.3-py3-tf-cpu`
+- `2.0.3-gpu` points to `2.0.3-py2-tf-gpu`
+- `2.0.3-py2-tf-cpu`/`2.0.3-py2-tf-gpu` [2017-04-19]: *Python 2.7* + *Keras* <small>(2.0.3)</small> + *TensorFlow* <small>(1.0.1)</small> on CPU/GPU ([*Dockerfile.py2-tf-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-tf-cpu)/[*.py2-tf-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-tf-gpu))
+- `2.0.3-py2-th-cpu`/`2.0.3-py2-th-gpu` [2017-04-19]: *Python 2.7* + *Keras* <small>(2.0.3)</small> + *Theano* <small>(0.9.0)</small> on CPU/GPU ([*Dockerfile.py2-th-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-th-cpu)/[*.py2-th-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-th-gpu))
+- `2.0.3-py3-tf-cpu`/`2.0.3-py3-tf-gpu` [2017-04-19]: *Python 3.5* + *Keras* <small>(2.0.3)</small> + *TensorFlow* <small>(1.0.1)</small> on CPU/GPU ([*Dockerfile.py3-tf-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-tf-cpu)/[*.py3-tf-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-tf-gpu))
+- `2.0.3-py3-th-cpu`/`2.0.3-py3-th-gpu` [2017-04-19]: *Python 3.5* + *Keras* <small>(2.0.3)</small> + *Theano* <small>(0.9.0)</small> on CPU/GPU ([*Dockerfile.py3-th-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-th-cpu)/[*.py3-th-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-th-gpu))
+- `2.0.2-py2-tf-cpu`/`2.0.2-py2-tf-gpu`/`2.0.2-py3-tf-cpu`/`2.0.2-py3-tf-gpu` [2017-03-27]: *Python 2.7/3.5* + *Keras* <small>(2.0.2)</small> + *TensorFlow* <small>(1.0.1)</small> on CPU/GPU
+- `2.0.2-py2-th-cpu`/`2.0.2-py2-th-gpu`/`2.0.2-py3-th-cpu`/`2.0.2-py3-th-gpu` [2017-03-27]: *Python 2.7/3.5* + *Keras* <small>(2.0.2)</small> + *Theano* <small>(0.9.0)</small> on CPU/GPU
 - `2.0.0-py2-tf-cpu`/`2.0.0-py2-tf-gpu`/`2.0.0-py3-tf-cpu`/`2.0.0-py3-tf-gpu` [2017-03-15]: *Python 2.7/3.5* + *Keras* <small>(2.0.0)</small> + *TensorFlow* <small>(1.0.1)</small> on CPU/GPU
 - `2.0.0-py2-th-cpu`/`2.0.0-py2-th-gpu`/`2.0.0-py3-th-cpu`/`2.0.0-py3-th-gpu` [2017-03-15]: *Python 2.7/3.5* + *Keras* <small>(2.0.0)</small> + *Theano* <small>(0.8.2)</small> on CPU/GPU
 - `1.2.2-py2-tf-cpu`/`1.2.2-py2-tf-gpu`/`1.2.2-py3-tf-cpu`/`1.2.2-py3-tf-gpu` [2017-02-17]: *Python 2.7/3.5* + *Keras* <small>(1.2.2)</small> + *TensorFlow* <small>(1.0.0)</small> on CPU/GPU
