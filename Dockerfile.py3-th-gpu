@@ -34,7 +34,7 @@ ARG THEANO_VERSION=0.9.0
 ENV THEANO_FLAGS='device=gpu,floatX=float32,nvcc.fastmath=True,lib.cnmem=1'
 RUN pip3 --no-cache-dir install git+https://github.com/Theano/Theano.git@rel-${THEANO_VERSION}
 
-ARG KERAS_VERSION=2.0.3
+ARG KERAS_VERSION=2.0.4
 ENV KERAS_BACKEND=theano
 RUN pip3 --no-cache-dir install git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
 
