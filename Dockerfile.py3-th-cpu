@@ -1,4 +1,4 @@
-# docker-keras - Keras in Docker for reproducible deep learning
+# docker-keras - Keras in Docker with Python 3 and Theano on CPU
 
 FROM debian:stretch
 MAINTAINER gw0 [http://gw.tnode.com/] <gw.2017@ena.one>
@@ -35,7 +35,7 @@ ARG THEANO_VERSION=0.9.0
 ENV THEANO_FLAGS='device=cpu,floatX=float32'
 RUN pip3 --no-cache-dir install git+https://github.com/Theano/Theano.git@rel-${THEANO_VERSION}
 
-ARG KERAS_VERSION=2.0.6
+ARG KERAS_VERSION=2.0.8
 ENV KERAS_BACKEND=theano
 RUN pip3 --no-cache-dir install git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
 

@@ -1,4 +1,4 @@
-# docker-keras - Keras in Docker for reproducible deep learning
+# docker-keras - Keras in Docker with Python 3 and TensorFlow on GPU
 
 FROM gw000/debian-cuda:8.0.44-3_5.1.10-1_375.66-1
 MAINTAINER gw0 [http://gw.tnode.com/] <gw.2017@ena.one>
@@ -31,12 +31,12 @@ RUN apt-get update -qq \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-ARG TENSORFLOW_VERSION=1.2.1
+ARG TENSORFLOW_VERSION=1.3.0
 ARG TENSORFLOW_DEVICE=gpu
 ARG TENSORFLOW_APPEND=_gpu
 RUN pip3 --no-cache-dir install https://storage.googleapis.com/tensorflow/linux/${TENSORFLOW_DEVICE}/tensorflow${TENSORFLOW_APPEND}-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
 
-ARG KERAS_VERSION=2.0.6
+ARG KERAS_VERSION=2.0.8
 ENV KERAS_BACKEND=tensorflow
 RUN pip3 --no-cache-dir install --no-dependencies git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
 
