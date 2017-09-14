@@ -11,6 +11,7 @@ RUN apt-get update -qq \
     build-essential \
     g++ \
     git \
+    openssh-client \
     # install python 2
     python \
     python-dev \
