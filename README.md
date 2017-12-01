@@ -62,13 +62,13 @@ Quick experiment with latest Keras (with TensorFlow backend on CPU) and your Pyt
 $ docker run -it --rm -v /srv/ai:/srv/ai gw000/keras /srv/ai/run.py
 ```
 
-Or using TensorFlow backend on GPUs (see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/)) in Python 2:
+Or using TensorFlow backend on GPUs in Python 2 (see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/)):
 
 ```bash
 $ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') $(ls /usr/lib/*-linux-gnu/{libcuda,libnvidia}* | xargs -I{} echo '-v {}:{}:ro') -v /srv/ai:/srv/ai gw000/keras:2.0.6-py2-tf-gpu /srv/ai/run.py
 ```
 
-Or using Theano backend on GPUs (see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/)) in Python 3:
+Or using Theano backend on GPUs in Python 3 (see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/)):
 
 ```bash
 $ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') $(ls /usr/lib/*-linux-gnu/{libcuda,libnvidia}* | xargs -I{} echo '-v {}:{}:ro') -v /srv/ai:/srv/ai gw000/keras:2.0.6-py3-th-gpu /srv/ai/run.py
