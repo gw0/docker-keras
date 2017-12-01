@@ -43,11 +43,11 @@ RUN apt-get update -qq \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-ARG CNTK_VERSION=2.1
+ARG CNTK_VERSION=2.3
 ARG CNTK_DEVICE=GPU
 RUN pip --no-cache-dir install https://cntk.ai/PythonWheel/${CNTK_DEVICE}/cntk-${CNTK_VERSION}-cp35-cp35m-linux_x86_64.whl
 
-ARG KERAS_VERSION=2.0.8
+ARG KERAS_VERSION=2.1.1
 ENV KERAS_BACKEND=cntk
 RUN pip3 --no-cache-dir install --no-dependencies git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
 
