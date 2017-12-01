@@ -45,7 +45,7 @@ RUN apt-get update -qq \
 
 ARG CNTK_VERSION=2.3
 ARG CNTK_DEVICE=CPU-Only
-RUN pip --no-cache-dir install https://cntk.ai/PythonWheel/${CNTK_DEVICE}/cntk-${CNTK_VERSION}-cp35-cp35m-linux_x86_64.whl
+RUN pip3 --no-cache-dir install https://cntk.ai/PythonWheel/${CNTK_DEVICE}/cntk-${CNTK_VERSION}-cp35-cp35m-linux_x86_64.whl
 
 ARG KERAS_VERSION=2.1.1
 ENV KERAS_BACKEND=cntk

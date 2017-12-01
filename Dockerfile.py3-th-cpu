@@ -37,7 +37,7 @@ RUN pip3 --no-cache-dir install git+https://github.com/Theano/Theano.git@rel-${T
 
 ARG KERAS_VERSION=2.1.1
 ENV KERAS_BACKEND=theano
-RUN pip3 --no-cache-dir install git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
+RUN pip3 --no-cache-dir install --no-dependencies git+https://github.com/fchollet/keras.git@${KERAS_VERSION}
 
 # quick test and dump package lists
 RUN python3 -c "import theano; print(theano.__version__)" \
