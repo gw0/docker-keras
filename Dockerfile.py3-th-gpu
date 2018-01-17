@@ -1,7 +1,7 @@
 # docker-keras - Keras in Docker with Python 3 and Theano on GPU
 
 FROM gw000/debian-cuda:8.0_6.0
-MAINTAINER gw0 [http://gw.tnode.com/] <gw.2017@ena.one>
+MAINTAINER gw0 [http://gw.tnode.com/] <gw.2018@ena.one>
 
 # install debian packages
 ENV DEBIAN_FRONTEND noninteractive
