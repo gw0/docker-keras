@@ -12,9 +12,12 @@ Open source project:
 
 Available tags:
 
-- `2.1.3-py2`, `2.1.3-cpu`, `2.1.3`, `latest` points to `2.1.3-py2-tf-cpu`
-- `2.1.3-py3` points to `2.1.3-py3-tf-cpu`
-- `2.1.3-gpu` points to `2.1.3-py2-tf-gpu`
+- `2.1.4-py2`, `2.1.4-cpu`, `2.1.4`, `latest` points to `2.1.4-py2-tf-cpu`
+- `2.1.4-py3` points to `2.1.4-py3-tf-cpu`
+- `2.1.4-gpu` points to `2.1.4-py2-tf-gpu`
+- `2.1.4-py2-tf-cpu`/`2.1.4-py2-tf-gpu`/`2.1.4-py3-tf-cpu`/`2.1.4-py3-tf-gpu` [2018-02-15]: *Python 2.7/3.5* + *Keras* <small>(2.1.4)</small> + *TensorFlow* <small>(1.5.0)</small> on CPU/GPU (*Dockerfile*[*.py2-tf-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-tf-cpu)/[*.py2-tf-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-tf-gpu)/[*.py3-tf-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-tf-cpu)/[*.py3-tf-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-tf-gpu))
+- `2.1.4-py2-th-cpu`/`2.1.4-py2-th-gpu`/`2.1.4-py3-th-cpu`/`2.1.4-py3-th-gpu` [2018-02-15]: *Python 2.7/3.5* + *Keras* <small>(2.1.4)</small> + *Theano* <small>(1.0.1)</small> on CPU/GPU (*Dockerfile*[.py2-th-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-th-cpu)/[*.py2-th-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-th-gpu)[*.py3-th-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-th-cpu)/[*.py3-th-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-th-gpu))
+- `2.1.4-py2-cntk-cpu`/`2.1.4-py2-cntk-gpu`/`2.1.4-py3-cntk-cpu`/`2.1.4-py3-cntk-gpu` [2018-02-15]: *Python 2.7/3.5* + *Keras* <small>(2.1.4)</small> + *CNTK* <small>(2.4)</small> on CPU/GPU (*Dockerfile*[.py2-cntk-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-cntk-cpu)/[*.py2-cntk-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-cntk-gpu)[*.py3-cntk-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-cntk-cpu)/[*.py3-cntk-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-cntk-gpu))
 - `2.1.3-py2-tf-cpu`/`2.1.3-py2-tf-gpu`/`2.1.3-py3-tf-cpu`/`2.1.3-py3-tf-gpu` [2018-01-17]: *Python 2.7/3.5* + *Keras* <small>(2.1.3)</small> + *TensorFlow* <small>(1.4.1)</small> on CPU/GPU (*Dockerfile*[*.py2-tf-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-tf-cpu)/[*.py2-tf-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-tf-gpu)/[*.py3-tf-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-tf-cpu)/[*.py3-tf-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-tf-gpu))
 - `2.1.3-py2-th-cpu`/`2.1.3-py2-th-gpu`/`2.1.3-py3-th-cpu`/`2.1.3-py3-th-gpu` [2018-01-17]: *Python 2.7/3.5* + *Keras* <small>(2.1.3)</small> + *Theano* <small>(1.0.1)</small> on CPU/GPU (*Dockerfile*[.py2-th-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-th-cpu)/[*.py2-th-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-th-gpu)[*.py3-th-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-th-cpu)/[*.py3-th-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-th-gpu))
 - `2.1.3-py2-cntk-cpu`/`2.1.3-py2-cntk-gpu`/`2.1.3-py3-cntk-cpu`/`2.1.3-py3-cntk-gpu` [2018-01-17]: *Python 2.7/3.5* + *Keras* <small>(2.1.3)</small> + *CNTK* <small>(2.3)</small> on CPU/GPU (*Dockerfile*[.py2-cntk-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-cntk-cpu)/[*.py2-cntk-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py2-cntk-gpu)[*.py3-cntk-cpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-cntk-cpu)/[*.py3-cntk-gpu*](http://github.com/gw0/docker-keras/blob/master/Dockerfile.py3-cntk-gpu))
@@ -59,30 +62,30 @@ Available tags:
 Usage
 =====
 
-Quick experiment with latest Keras (with TensorFlow backend on CPU) and your Python 2 code in `/srv/ai`:
+Quick experiment with latest Keras (with TensorFlow backend on CPU) and your Python 2 code in current directory (will be mapped to `/srv`):
 
 ```bash
-$ docker run -it --rm -v /srv/ai:/srv/ai gw000/keras /srv/ai/run.py
+$ docker run -it --rm -v $(pwd):/srv gw000/keras /srv/run.py
 ```
 
 Or using TensorFlow backend on GPUs in Python 2 (see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/)):
 
 ```bash
-$ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') $(ls /usr/lib/*-linux-gnu/{libcuda,libnvidia}* | xargs -I{} echo '-v {}:{}:ro') -v /srv/ai:/srv/ai gw000/keras:2.0.6-py2-tf-gpu /srv/ai/run.py
+$ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') $(ls /usr/lib/*-linux-gnu/{libcuda,libnvidia}* | xargs -I{} echo '-v {}:{}:ro') -v $(pwd):/srv gw000/keras:2.1.4-py2-tf-gpu /srv/run.py
 ```
 
 Or using Theano backend on GPUs in Python 3 (see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/)):
 
 ```bash
-$ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') $(ls /usr/lib/*-linux-gnu/{libcuda,libnvidia}* | xargs -I{} echo '-v {}:{}:ro') -v /srv/ai:/srv/ai gw000/keras:2.0.6-py3-th-gpu /srv/ai/run.py
+$ docker run -it --rm $(ls /dev/nvidia* | xargs -I{} echo '--device={}') $(ls /usr/lib/*-linux-gnu/{libcuda,libnvidia}* | xargs -I{} echo '-v {}:{}:ro') -v $(pwd):/srv gw000/keras:2.1.4-py3-th-gpu /srv/run.py
 ```
 
-Additional parameters in above commands explicitly expose your GPU devices and CUDA libraries from the host system into the container. The vendor specific *nvidia-docker* tool performs the same thing in a less transparent way and is incompatible with other Docker tools. For more instructions see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/).
+Additional parameters in above commands explicitly expose your GPU devices and CUDA Driver library from the host system into the container. The vendor specific *nvidia-docker* tool performs the same thing in a less transparent way and is incompatible with other Docker tools. For more instructions see [docker-debian-cuda](http://gw.tnode.com/docker/debian-cuda/).
 
 In practice you are supposed to extend this image by writing your own `Dockerfile` that installs all your application dependencies (either using `apt-get` or `pip`). Eg. if you need Matplotlib, PIL/pillow, Pandas, Scikit-learn, and Statsmodels:
 
 ```
-FROM gw000/keras:2.0.6-py2-th-cpu
+FROM gw000/keras:2.1.4-py3-tf-cpu
 
 # install dependencies from debian packages
 RUN apt-get update -qq \
@@ -100,6 +103,7 @@ RUN pip --no-cache-dir install \
 ADD ai/ /srv/ai/
 RUN chmod +x /srv/ai/run.py
 
+# default command
 CMD ["/srv/ai/run.py"]
 ```
 
